@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    gap: 1.3rem;
+}
+
+.container > * {
+    border-radius: 10px;
+    border: 1px solid var(--gray4);
+    padding: 12px;
+}
+.container > *:focus{
+    outline: none;
+    box-shadow: 0px 0px 1px 3px #7fb1f5;
+}
+
+.input{
+    display: block;
+    flex-grow: 1;
+    font-weight: 400;
+    color: var(--gray3);
+    font-size: 14px;
+}
+.btn{
+    padding: 12px 30px;
+    box-shadow: 0px 2px 6px 0px #7fb1f367;
+    border-color: var(--blue);
+    background-color: var(--blue);
+    color: #fff;
+    font-weight: 600;
+}
+.btn:hover{
+    filter: contrast(0.8);
+}

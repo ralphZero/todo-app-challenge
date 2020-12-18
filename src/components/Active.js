@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Active = () => {
+const Active = (props) => {
     return (
         <div>
             Active

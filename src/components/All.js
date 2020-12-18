@@ -1,9 +1,11 @@
 import React from 'react';
+import Form from './Form';
 
-const All = () => {
+const All = ({sender, active}) => {
+    
     return (
         <div>
-            All
+            <Form newTodo={sender}/>
         </div>
     );
 }

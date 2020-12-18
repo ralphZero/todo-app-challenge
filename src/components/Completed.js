@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Completed = () => {
+const Completed = (props) => {
     return (
         <div>
             Completed
