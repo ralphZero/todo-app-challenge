@@ -1,11 +1,11 @@
 import React from 'react'
 import sheet from './Form.module.css'
 
-const Form = (props) => {
+const Form = ({newTodo}) => {
 
     function onButtonClick(e) {
         const input = e.currentTarget.previousElementSibling;
-        props.newTodo = input.value;
+        newTodo(input.value);
         input.value = null;
     }
 

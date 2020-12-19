@@ -35,14 +35,26 @@ class Tab extends Component {
         })
     }
 
+    handleNewTodo = (todo) => {
+        this.props.onAddData(todo)
+    }
+
+    handleItemCheck = (key, value) => {
+        this.props.onChangedData(key, value)
+    }
+
+    handleDelete = (id) => {
+        this.props.onDeleteData(id)
+    }
+
     render() {
         return (
             <>
               <TabBar active={this.state.active} onChanged={this.onCurrentTabChanged} />
               <TabView active={this.state.active}>
-                  <All data={this.state.data} />
-                  <Active data={this.state.data} />
-                  <Completed data={this.state.data} />
+                  <All data={this.state.data} sender={this.handleNewTodo} onChecked={this.handleItemCheck}/>
+                  <Active data={this.state.data} sender={this.handleNewTodo} onChecked={this.handleItemCheck}/>
+                  <Completed data={this.state.data} onChecked={this.handleItemCheck} onDeleted={this.handleDelete}/>
               </TabView>
             </>
         );

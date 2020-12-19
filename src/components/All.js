@@ -7,11 +7,11 @@ const All = ({data, sender, onChecked}) => {
 
     const list = data.map((item) => {
         return (
-            <ListItem key={Math.random()} active={active} value={item.done} onChecked={onChecked}>{item.action}</ListItem>
+            <ListItem key={Math.random()} id={item.id} active={active} value={item.done} onChecked={onChecked}>{item.action}</ListItem>
         )
     })
     return (
-        <div>
+        <div style={{padding : 10}}>
             <Form newTodo={sender}/>
             {list}
         </div>
