@@ -8,7 +8,7 @@ const Completed = ({data, onChecked, onDeleted}) => {
 
     const list = data.map((item) => {
         return item.done ? (
-            <ListItem key={Math.random()} id={item.id} active={active} value={item.done} onChecked={onChecked} onDelete={onDeleted}>{item.action}</ListItem>
+            <ListItem key={Math.floor(Math.random()*16777215).toString(16)} id={item.id} active={active} value={item.done} onChecked={onChecked} onDelete={onDeleted}>{item.action}</ListItem>
         ) : null
     })
 

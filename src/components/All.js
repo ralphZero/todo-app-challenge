@@ -7,7 +7,7 @@ const All = ({data, sender, onChecked}) => {
 
     const list = data.map((item) => {
         return (
-            <ListItem key={Math.random()} id={item.id} active={active} value={item.done} onChecked={onChecked}>{item.action}</ListItem>
+            <ListItem key={Math.floor(Math.random()*16777215).toString(16)} id={item.id} active={active} value={item.done} onChecked={onChecked}>{item.action}</ListItem>
         )
     })
     return (

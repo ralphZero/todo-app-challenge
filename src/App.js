@@ -5,20 +5,36 @@ import Tab from './components/Tab'
 class App extends Component {
 
   state = {
-    todos : [
-      {id : 1, done : false, action : 'Buy milk' },
-      {id : 2, done : false, action : 'Play golf' },
-      {id : 3, done : true, action : 'Buy OJ' },
-      {id : 4, done : false, action : 'Sing w/ Tony' },
-      {id : 5, done : true, action : 'Go bowling' }
-    ]
+    todos : []
+  }
+
+  componentDidMount(){
+    if(!localStorage.getItem('todos')){
+      localStorage.setItem('todos', '');
+    }else{
+      const todos = JSON.parse(localStorage.getItem('todos'));
+      this.setState({
+        todos
+      })
+    }
+  }
+
+  componentDidUpdate(oldProps, oldState){
+    if(oldState.todos !== this.state.todos){
+      if(localStorage.getItem('todos')){
+        const todos = JSON.stringify(this.state.todos)
+        localStorage.setItem('todos', todos)
+      }
+    }
   }
 
   handleNewData = (data) => {
     const todo = {};
+    todo.id = Math.floor(Math.random()*16777215).toString(16)
     todo.done = false;
     todo.action = data; 
     const list = [...this.state.todos, todo]
+
     this.setState({
       todos : list
     })
