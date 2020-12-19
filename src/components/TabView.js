@@ -26,7 +26,6 @@ class TabView extends Component {
 
         if(this.state.lastActive > this.props.active){
             //go left
-            console.log('go left');
             if(this.props.active === 0){
                 div.scrollBy(-(width *2), 0);
             }else if(this.props.active === 1){ 
@@ -36,7 +35,6 @@ class TabView extends Component {
             }
         }else if(this.state.lastActive < this.props.active){
             //go right
-            console.log('go right');
             if(this.props.active === 0){
                 div.scrollBy(0, 0);
             }else if(this.props.active === 1){ 
@@ -45,7 +43,6 @@ class TabView extends Component {
                 div.scrollBy(width * 2, 0);
             }
         }else{
-            console.log('same');
         }
         this.setState({
             lastActive : this.props.active

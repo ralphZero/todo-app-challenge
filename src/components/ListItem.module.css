@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+}
+.input{
+    transform: scale(1.5);
+    margin-right: .82rem;
+}
+.text{
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--black);
+}
+.text.deleted{
+    text-decoration: line-through;
+}
+.icon{
+    margin-left: auto;
+    margin-right: 0.5rem;
+    fill: gray;
+}
+.icon:hover{
+    fill: red;
+    cursor: pointer;
+}

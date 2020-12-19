@@ -10,7 +10,22 @@ class Tab extends Component {
     constructor(props){
         super(props);
         this.state = {
-            active : 0
+            active : 0,
+            data : []
+        }
+    }
+
+    componentDidMount(){
+        this.setState({
+            data : this.props.data
+        })
+    }
+
+    componentDidUpdate(oldProp){
+        if(oldProp.data !== this.props.data){
+            this.setState({
+                data : this.props.data
+            })
         }
     }
 
@@ -25,9 +40,9 @@ class Tab extends Component {
             <>
               <TabBar active={this.state.active} onChanged={this.onCurrentTabChanged} />
               <TabView active={this.state.active}>
-                  <All />
-                  <Active />
-                  <Completed />
+                  <All data={this.state.data} />
+                  <Active data={this.state.data} />
+                  <Completed data={this.state.data} />
               </TabView>
             </>
         );
