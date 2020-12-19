@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form'
 import ListItem from './ListItem'
+import addTodo from '../addtodo.svg'
 
 const Active = ({data, sender, onChecked}) => {
     
@@ -15,7 +16,13 @@ const Active = ({data, sender, onChecked}) => {
     return (
         <div style={{padding : 10}}>
             <Form newTodo={sender} />
-            {list}
+            {list.length !== 0 ? (
+                list
+            ) : (
+                <div style={{display : 'flex', justifyContent : 'center', paddingTop : 50}}>
+                    <img className='error-img' src={addTodo} alt="no data"/>
+                </div>
+            )}
         </div>
     );
 }

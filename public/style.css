@@ -16,6 +16,11 @@ body{
     padding: 0 25vw;
 }
 
+.error-img{
+    width: 70%;
+    max-width: 400px;
+}
+
 
 @media screen and (max-width: 650px){
     body{
