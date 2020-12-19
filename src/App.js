@@ -10,8 +10,10 @@ class App extends Component {
 
   componentDidMount(){
     if(!localStorage.getItem('todos')){
+      console.log('has no todos');
       localStorage.setItem('todos', '');
     }else{
+      console.log('has todos');
       const todos = JSON.parse(localStorage.getItem('todos'));
       this.setState({
         todos
@@ -20,11 +22,10 @@ class App extends Component {
   }
 
   componentDidUpdate(oldProps, oldState){
-    if(oldState.todos !== this.state.todos){
-      if(localStorage.getItem('todos')){
-        const todos = JSON.stringify(this.state.todos)
-        localStorage.setItem('todos', todos)
-      }
+    if(oldState !== this.state){
+      const todos = JSON.stringify(this.state.todos)
+      localStorage.setItem('todos', todos)
+      console.log('str : '+localStorage.getItem('todos'));
     }
   }
 
