@@ -89,13 +89,16 @@ class App extends Component {
 
   render(){
     return (
-      <div className="App">
-        <nav className={sheet.navbar}>#todo</nav>
-        <Tab data={this.state.todos} 
-          onAddData={this.handleNewData} 
-          onChangedData={this.handleDataChange}
-          onDeleteData = {this.handleDeleteData}/>
-      </div>
+      <>
+        <div>
+          <nav className={sheet.navbar}>#todo</nav>
+          <Tab data={this.state.todos} 
+            onAddData={this.handleNewData} 
+            onChangedData={this.handleDataChange}
+            onDeleteData = {this.handleDeleteData}/>
+        </div>
+        <footer>Ralph Placide @ DevChallenges.io</footer>
+      </>
     )
   }
 }

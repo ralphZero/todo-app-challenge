@@ -21,6 +21,19 @@ body{
     max-width: 400px;
 }
 
+#root{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer{
+    padding: 2vh;
+    text-align: center;
+    color: var(--gray);
+    font-weight: 400;
+}
+
 
 @media screen and (max-width: 650px){
     body{
